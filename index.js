@@ -14,10 +14,15 @@ if (args._.length <= 1) {
 const [src, dist] = args._;
 
 try {
-  const targetStr = `${HeaderStr} ${fs.readFileSync(src, {
-    encoding: "utf8"
-  })}`;
-  fs.writeFileSync(dist, targetStr, { encoding: "utf8" });
+  const srcStream = fs.createReadStream(src, 'utf8');
+  const destStream = fs.createWriteStream(dist, 'utf8');
+  destStream.on('open', () => {
+    const chunk = Buffer.from(HeaderStr, 'utf8')
+    destStream.write(chunk)
+  })
+  
+  srcStream.on('data', chunk => destStream.write(chunk));
+  srcStream.on('end', () => destStream.end());
 } catch (err) {
   throw new Error(err);
 }

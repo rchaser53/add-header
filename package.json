@@ -1,0 +1,31 @@
+{
+  "name": "add-text-header",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "add-text-header": "index.js"
+  },
+  "scripts": {
+    "prettier": "prettier  --write \"**/*.{md,js,ts,json}\"",
+    "add-header": "node index.js",
+    "prepublishOnly": "mkdir -p dist && node index.js index.js dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchaser53/add-header.git"
+  },
+  "keywords": [],
+  "author": "rchaser53",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rchaser53/add-header/issues"
+  },
+  "homepage": "https://github.com/rchaser53/add-header#readme",
+  "dependencies": {
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  }
+}

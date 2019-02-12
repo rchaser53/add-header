@@ -16,16 +16,8 @@ try {
   const headerStr = args.c != null ? fs.readFileSync(args.c, { encoding: 'utf8' }) : HeaderStr
 
   const [src, dist] = args._
-
-  const srcStream = fs.createReadStream(src, 'utf8')
-  const destStream = fs.createWriteStream(dist, 'utf8')
-  destStream.on('open', () => {
-    const chunk = Buffer.from(headerStr, 'utf8')
-    destStream.write(chunk)
-  })
-
-  srcStream.on('data', (chunk) => destStream.write(chunk))
-  srcStream.on('end', () => destStream.end())
+  const input = fs.readFileSync(src, { encoding: 'utf8' })
+  fs.writeFileSync(dist, `${headerStr}${input}`, { encoding: 'utf8' })
 } catch (err) {
   throw new Error(err)
 }

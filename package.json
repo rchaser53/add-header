@@ -1,10 +1,10 @@
 {
   "name": "add-text-header",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "bin": {
-    "add-text-header": "index.js"
+    "add-text-header": "dist/index.js"
   },
   "scripts": {
     "prettier": "prettier  --write \"**/*.{md,js,ts,json}\"",

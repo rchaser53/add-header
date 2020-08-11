@@ -1,7 +1,7 @@
 {
   "name": "add-text-header",
-  "version": "0.0.5",
-  "description": "",
+  "version": "0.1.0",
+  "description": "add '#!/usr/bin/env node' to the first line of text",
   "main": "dist/index.js",
   "bin": {
     "add-text-header": "dist/index.js"
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/rchaser53/add-header#readme",
   "dependencies": {
-    "yargs": "^12.0.5"
+    "yargs": "^15.4.1"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
